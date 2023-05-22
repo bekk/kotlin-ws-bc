@@ -33,7 +33,7 @@ Note: Sjekk https://github.com/bekk/kotlin-workshop/tree/master/src/main/kotlin 
 
 # Lage ditt første spill med LibGDX og Kotlin
 
-Nå skal vi lage et spill! Du skal styre en firkant på skjermen som skal
+Nå skal vi lage et spill! Du skal styre en firkant på skjermen. Firkanten skal
 unngå andre firkanter som faller ned fra toppen av skjermen. Målet med oppgaven er å gjøre
 deg litt kjent med et par viktige konsepter som du kan ta med deg inn i de litt mer kreative
 oppgavene.
