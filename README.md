@@ -125,7 +125,8 @@ Legg gjerne til litt ekstra features som du tenker kan være kult.
  * Vise hvor lenge man overlevde på en "score screen" når man taper?
  * Øke vanskelighetsgraden over tid (øke tempoet på brikkene som faller, spawne flere)
  * Blokker av ulike størrelser og med ulik fart?
- * Bytte ut firkantene med bilder eller egenlaget figur.
+ * Lag din egen figur!
+ * Bytte ut firkantene med bilder
  * Se gjerne på ting i `examples`-mappen for inspirasjon til flere ting å leke seg med
 
 Legg gjerne på kule ting du kommer på, eller gå videre til neste oppgave som er litt åpen.
