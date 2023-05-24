@@ -80,6 +80,7 @@ Oppgave:
 3. Bruk coacher2023 listen, og summer opp hvor mange år de har jobbet til sammen.
 
 <details><summary> 🤠 Løsningsforslag</summary>
+
 ```
 val realCoacher2023 = coacher2023.map {
     when (it.name) {
@@ -93,9 +94,10 @@ val teknologiCoacher = realCoacher2023.filter {
     it.avdeling == Avdeling.TEKNOLOGI
 }
 
-
 coacher2023.sumOf { it.yearsInBekk }
 ```
+
+
 </details>
 
 ## Extension Functions
