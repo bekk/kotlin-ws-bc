@@ -71,15 +71,18 @@ Løsning:
 Map, filter og forEach
 
 ```
+listeMedBekkKonsulenter.filter { it.name != "Ingrid" }
 ```
 
 Oppgave:
-// Ha en mappe med coacher
-// Map over listen med coacher og lag en liste med BekkKonsulenter
-// Filtrer ut de som har A i navnet sitt
+1. I intro-filen finner du en liste med coacher2023. Map over denne lista, og lag en ny liste med BootcampCoacher. Alle skal være i teknologi-avdelingen. 
+2. Gå igjennom listen, finn navnet Morten, og endre avdeling på han til BMC. Endre avdeling på Ragnhild til Design.  
+3. Lag en egen liste for coachene som er i avdelingen til teknologi. 
 
 Løsning:
 ```
+1. val coacher2023 = coacher2023.map { BootcampCoacher(name = it, avdeling = Avdeling.Teknologi) }
+
 ```
 
 
