@@ -66,25 +66,37 @@ Løsning:
 
 
 ## Higher Order Functions
-- To setninger om bruken av disse
-
-Map, filter og forEach
+Store deler av det vi gjør som utviklere er å hente data, manipulere den og deretter bruke den videre i applikasjonene våre.
+I Kotlin finnes det mange "higher order functions", altså ferdigskrevne hjelpefunksjoner, som gjør dette lettere enn i Java. 
+Blant annet har vi funksjoner for å endre lister (map) eller filtrerer bort ting vi ikke trenger (filter). 
 
 ```
 listeMedBekkKonsulenter.filter { it.name != "Ingrid" }
 ```
 
 Oppgave:
-1. I intro-filen finner du en liste med coacher2023. Map over denne lista, og lag en ny liste med BootcampCoacher. Alle skal være i teknologi-avdelingen. 
-2. Gå igjennom listen, finn navnet Morten, og endre avdeling på han til BMC. Endre avdeling på Ragnhild til Design.  
-3. Lag en egen liste for coachene som er i avdelingen til teknologi. 
+1. Gå igjennom listen, finn navnene Morten og Ragnhild, og lag en ny liste hvor Morten er i BMC og Ragnhild er i design. 
+2. Bruk den siste listen, og lag en egen liste for coachene som er i teknologi-avdelingen. 
+3. Bruk coacher2023 listen, og summer opp hvor mange år de har jobbet til sammen.
 
-Løsning:
+<details><summary> 🤠 Løsningsforslag</summary>
 ```
-1. val coacher2023 = coacher2023.map { BootcampCoacher(name = it, avdeling = Avdeling.Teknologi) }
+val realCoacher2023 = coacher2023.map {
+    when (it.name) {
+        "Morten" -> it.copy(avdeling = Avdeling.BMC)
+        "Ragnhild" -> it.copy(avdeling = Avdeling.DESIGN)
+        else -> it
+    }
+}
 
+val teknologiCoacher = realCoacher2023.filter {
+    it.avdeling == Avdeling.TEKNOLOGI
+}
+
+
+coacher2023.sumOf { it.yearsInBekk }
 ```
-
+</details>
 
 ## Extension Functions
 To setninger om extension function, kodeeksempel og henvisning til oppgave
