@@ -8,14 +8,27 @@ Og ikke glem, bruk coachene og kollegaene dine aktivt! Vi er her for å hjelpe �
 
 ## Data classes
 
-En data class .....
-```
-data class Bekker(
-    val name: String,
-    )
-```
+En `data class` er en klasse som er ment for å holde på data.
+Når du deninerer en dataklasse får du en del funksjonalitet gratis, som f.eks. `toString`, `equals`, `hashCode` og `copy`.
+
 Oppgave: 
-Åpne filen i introduction som heter "DataClass". Lag en data class som heter Konsulent, med navn, avdeling, og faggruppe. 
+Åpne filen i introduction som heter "DataClass" hvor det ligger det en klasse som heter `Konsulent`, og en main funksjon.
+1. Kjør main funksjonen, og se hva som skjer.
+2. Gjør `Konsulent` om til en `data class` og kjør main funksjonen igjen. Hva skjer nå, og hvorfor?
+
+<details><summary> 🤠 Løsningsforslag</summary>
+
+1. Nå fungerer `println` mye bedre, og vi får en fin utskrift av objektet vårt.
+Det er fordi default implementasjonen for `toString` i `Any` (som alle klasser arver fra) er å skrive ut klassenavnet og en hashkode.
+Når vi gjør `Konsulent` til en `data class` får vi en implementasjon av `toString` som skriver ut alle feltene i klassen.
+
+2. `==` gjør nå en strukturell sammenlikning, og vi får `true` når vi sammenligner to konsulenter med samme navn.
+By default er `==` bare en referanse-sammenlikning, og vi får `false` når vi sammenlikner to separate objekter selv om de har samme innhold.
+
+Se mer: https://kotlinlang.org/docs/data-classes.html
+
+</details>
+
 
 Løsning: 
 ```
