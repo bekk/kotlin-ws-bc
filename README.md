@@ -11,7 +11,8 @@ Og ikke glem, bruk coachene og kollegaene dine aktivt! Vi er her for å hjelpe �
 En `data class` er en klasse som er ment for å holde på data.
 Når du deninerer en dataklasse får du en del funksjonalitet gratis, som f.eks. `toString`, `equals`, `hashCode` og `copy`.
 
-Oppgave: 
+Oppgave:
+
 Åpne filen i introduction som heter "DataClass" hvor det ligger det en klasse som heter `Konsulent`, og en main funksjon.
 1. Kjør main funksjonen, og se hva som skjer.
 2. Gjør `Konsulent` om til en `data class` og kjør main funksjonen igjen. Hva skjer nå, og hvorfor?
@@ -29,19 +30,26 @@ Se mer: https://kotlinlang.org/docs/data-classes.html
 
 </details>
 
+## Mutable vs Immutable
 
-Løsning: 
+I kotlin er man ofte opptatt `mutability` og `immutability`, eller "muterbarhet" og "ikke-muterbarhet", som referer til hvor vidt data kan endres etter den er opprettet.
+Fordelen med å gjøre så mye som mulig `immutable` er at koden ofte blir mer lesbar, og lettere å debugge, fordi
+man alltid kan resonere om en verdien til en variabel utifra hvordan den ble opprettet uten å tenke på om den har blitt endret av koden senere i programmet.
+Når man jobber med ikke-muterbar data er måten man gjør oppdateringer på å bruke operasjoner som lager en kopi av dataen med de ønskede endringe.
+
 ```
-data class Konsulent(
-    val name: String,
-    )
+val number = 42
+number = 69 // Error: val cannot be reassigned
 ```
 
-// BekkKonsulent vs konsulent
-// Mål er at de skal kunne kjøre main, og opprette en konsulent
-// Program som varierende grad funker når du bare har en class, og sleng på data og sjekk hva du får på autocomplete
+```
+val numbers = listOf(1, 2, 3)
+numbers.add(4) // Error: Unresolved reference: add
+```
 
-## Immutable vs Mutable
+Oppgave:
+
+
 
 ```
 ```
