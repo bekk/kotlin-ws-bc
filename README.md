@@ -8,41 +8,58 @@ Og ikke glem, bruk coachene og kollegaene dine aktivt! Vi er her for å hjelpe �
 
 ## Data classes
 
-En data class .....
-```
-data class Bekker(
-    val name: String,
-    )
-```
-Oppgave: 
-Åpne filen i introduction som heter "DataClass". Lag en data class som heter Konsulent, med navn, avdeling, og faggruppe. 
-
-Løsning: 
-```
-data class Konsulent(
-    val name: String,
-    )
-```
-
-// BekkKonsulent vs konsulent
-// Mål er at de skal kunne kjøre main, og opprette en konsulent
-// Program som varierende grad funker når du bare har en class, og sleng på data og sjekk hva du får på autocomplete
-
-## Immutable vs Mutable
-
-```
-```
+En `data class` er en klasse som kun er ment for å holde på data.
+Når du definerer en dataklasse får du en del funksjonalitet gratis, som f.eks. `toString`, `equals`, `hashCode` og `copy`.
 
 Oppgave:
 
-// var vs val
-// Opprette en mutable list og en immmutable list, som de oppretter i main og forklarer hvordan det funker
+Åpne filen i introduction som heter "DataClass" hvor det ligger det en klasse som heter `Konsulent`, og en main funksjon.
+1. Kjør main funksjonen, og se hva som skjer.
+2. Gjør `Konsulent` om til en `data class` og kjør main funksjonen igjen. Hva skjer nå, og hvorfor?
 
-// En liste over konsulenter
-// Eller liste over faggrupper
-Løsning:
+<details><summary> 🤠 Løsningsforslag</summary>
+
+1. Nå fungerer `println` mye bedre, og vi får en fin utskrift av objektet vårt.
+Det er fordi default implementasjonen for `toString` i `Any` (som alle klasser arver fra) er å skrive ut klassenavnet og en hashkode.
+Når vi gjør `Konsulent` til en `data class` får vi en implementasjon av `toString` som skriver ut alle feltene i klassen.
+
+2. `==` gjør nå en strukturell sammenlikning, og vi får `true` når vi sammenligner to konsulenter med samme navn.
+By default er `==` bare en referanse-sammenlikning, og vi får `false` når vi sammenlikner to separate objekter selv om de har samme innhold.
+
+Se mer: https://kotlinlang.org/docs/data-classes.html
+
+</details>
+
+## Mutable vs Immutable
+
+I kotlin er man ofte opptatt `mutability` og `immutability`, eller "muterbarhet" og "ikke-muterbarhet", som referer til hvor vidt data kan endres etter den er opprettet.
+Fordelen med å gjøre så mye som mulig `immutable` er at koden ofte blir mer lesbar, og lettere å debugge, fordi
+man alltid kan resonere om en verdien til en variabel utifra hvordan den ble opprettet uten å tenke på om den har blitt endret av koden senere i programmet.
+Når man jobber med ikke-muterbar data er måten man gjør oppdateringer på å bruke operasjoner som lager en kopi av dataen med de ønskede endringe.
+
+Åpne filen `Mutability.kt` og løs oppgavene der.
+
+<details><summary>Løsning på oppgave 1</summary>
+
+```kotlin
+val sondre = Person("Sondre")
+val gaute = sondre.copy(name = "Gaute")
+println(gaute) // -> Person(name=Gaute, age=26)
 ```
+
+</details>
+
+<details><summary>Løsning på oppgave 2</summary>
+
+```kotlin
+val numbers = mutableListOf(1, 2, 3)
+numbers.add(4)
 ```
+
+Det Å bruke ikke-muterbare lister blir enklere når
+man er komfortabel med "Higher Order Functions" som vi skal se på senere i workshopen.
+
+</details>
 
 ## Functions
 
