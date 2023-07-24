@@ -16,5 +16,6 @@ val config = Lwjgl3ApplicationConfiguration().apply {
     setTitle("kotlin libgdx intro")
     setWindowedMode(EngineConfig.width, EngineConfig.height)
     setForegroundFPS(60)
+    setResizable(false)
     useVsync(false)
 }
