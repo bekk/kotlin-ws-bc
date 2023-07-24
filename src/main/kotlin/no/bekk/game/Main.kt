@@ -8,13 +8,12 @@ import com.badlogic.gdx.utils.TimeUtils
 import ktx.graphics.rect
 import ktx.graphics.use
 import no.bekk.game.utils.Rectangle
-import no.bekk.game.utils.x
 
 fun main() {
-    Lwjgl3Application(AppRunner { DodgeFallingSqueres() }, config)
+    Lwjgl3Application(AppRunner { DodgeFallingSquares() }, config)
 }
 
-class DodgeFallingSqueres: AppModule {
+class DodgeFallingSquares: AppModule {
     private val shapeRenderer = globals.shapeRenderer
     private var lastBlockSpawnTime = TimeUtils.millis()
     private var player = Rectangle(

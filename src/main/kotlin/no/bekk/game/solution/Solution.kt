@@ -18,10 +18,10 @@ import no.bekk.game.utils.Rectangle
 import no.bekk.game.utils.x
 
 fun main() {
-    Lwjgl3Application(AppRunner { DodgeFallingSqueresSolution() }, config)
+    Lwjgl3Application(AppRunner { DodgeFallingSquaresSolution() }, config)
 }
 
-class DodgeFallingSqueresSolution: AppModule {
+class DodgeFallingSquaresSolution: AppModule {
     private val shapeRenderer = globals.shapeRenderer
     private var lastBlockSpawnTime = TimeUtils.millis()
     private var movementSpeed = 500f
