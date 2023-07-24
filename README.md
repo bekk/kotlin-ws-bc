@@ -37,33 +37,29 @@ Fordelen med å gjøre så mye som mulig `immutable` er at koden ofte blir mer l
 man alltid kan resonere om en verdien til en variabel utifra hvordan den ble opprettet uten å tenke på om den har blitt endret av koden senere i programmet.
 Når man jobber med ikke-muterbar data er måten man gjør oppdateringer på å bruke operasjoner som lager en kopi av dataen med de ønskede endringe.
 
-```
-val number = 42
-number = 69 // Error: val cannot be reassigned
-```
+Åpne filen `Mutability.kt` og løs oppgavene der.
 
-```
-val numbers = listOf(1, 2, 3)
-numbers.add(4) // Error: Unresolved reference: add
-```
+<details><summary>Løsning på oppgave 1</summary>
 
-Oppgave:
-
-
-
-```
+```kotlin
+val sondre = Person("Sondre")
+val gaute = sondre.copy(name = "Gaute")
+println(gaute) // -> Person(name=Gaute, age=26)
 ```
 
-Oppgave:
+</details>
 
-// var vs val
-// Opprette en mutable list og en immmutable list, som de oppretter i main og forklarer hvordan det funker
+<details><summary>Løsning på oppgave 2</summary>
 
-// En liste over konsulenter
-// Eller liste over faggrupper
-Løsning:
+```kotlin
+val numbers = mutableListOf(1, 2, 3)
+numbers.add(4)
 ```
-```
+
+Det Å bruke ikke-muterbare lister blir enklere når
+man er komfortabel med "Higher Order Functions" som vi skal se på senere i workshopen.
+
+</details>
 
 ## Functions
 
