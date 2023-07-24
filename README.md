@@ -8,8 +8,8 @@ Og ikke glem, bruk coachene og kollegaene dine aktivt! Vi er her for å hjelpe �
 
 ## Data classes
 
-En `data class` er en klasse som er ment for å holde på data.
-Når du deninerer en dataklasse får du en del funksjonalitet gratis, som f.eks. `toString`, `equals`, `hashCode` og `copy`.
+En `data class` er en klasse som kun er ment for å holde på data.
+Når du definerer en dataklasse får du en del funksjonalitet gratis, som f.eks. `toString`, `equals`, `hashCode` og `copy`.
 
 Oppgave:
 
