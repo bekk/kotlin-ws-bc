@@ -2,13 +2,13 @@ package no.bekk.game.examples
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
-import com.badlogic.gdx.backends.lwjgl.LwjglApplication
+import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application
 import no.bekk.game.AppModule
 import no.bekk.game.AppRunner
 import no.bekk.game.config
 
 fun main() {
-    LwjglApplication(AppRunner { SceneManagerModule() }, config)
+    Lwjgl3Application(AppRunner { SceneManagerModule() }, config)
 }
 
 /**

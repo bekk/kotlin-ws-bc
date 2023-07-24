@@ -2,7 +2,7 @@ package no.bekk.game.solution
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
-import com.badlogic.gdx.backends.lwjgl.LwjglApplication
+import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.math.Vector2
@@ -18,7 +18,7 @@ import no.bekk.game.utils.Rectangle
 import no.bekk.game.utils.x
 
 fun main() {
-    LwjglApplication(AppRunner { DodgeFallingSqueresSolution() }, config)
+    Lwjgl3Application(AppRunner { DodgeFallingSqueresSolution() }, config)
 }
 
 class DodgeFallingSqueresSolution: AppModule {
