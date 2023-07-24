@@ -280,7 +280,7 @@ Legg gjerne til litt ekstra features som du tenker kan være kult.
  * Øke vanskelighetsgraden over tid (øke tempoet på brikkene som faller, spawne flere)
  * Blokker av ulike størrelser og med ulik fart?
  * Lag din egen figur!
- * Bytte ut firkantene med bilder
+ * Bytte ut firkantene med bilder? (Se [MovingGraphicModule.kt](src/main/kotlin/no/bekk/game/examples/MovingGraphicModule.kt))
  * Se gjerne på ting i `examples`-mappen for inspirasjon til flere ting å leke seg med
 
 Legg gjerne på kule ting du kommer på, eller gå videre til neste oppgave som er litt åpen.
