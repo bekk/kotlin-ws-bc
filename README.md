@@ -63,14 +63,27 @@ man er komfortabel med "Higher Order Functions" som vi skal se på senere i work
 
 ## Functions
 
-// Snakk litt om funksjoner og default arguments,
+Funksjoner i kotlin defineres med `fun`-nøkkelordet, og kan ha parametere og returverdier.
+```kotlin
+fun add(a: Int, b: Int): Int {
+    return a + b
+}
+```
+Man kan også gi et parameter en default verdi ved å skrive `= <verdi>` etter typen.
 
 Oppgave:
-// Legg til en funksjon på konsulent-klassen som printer "Hallo, name" + valgfri suffix. 
+Åpne `Funksjoner.kt` og legg til en funksjon på `BekkAnsatt`-klassen som printer "Hallo, name" + valgfri suffix, som har en default verdi. 
 
-Løsning:
+<details><summary>Løsning</summary>
+
+```kotlin
+fun greet(suffix: String = "!") {
+    println("Hallo, $name $suffix")
+}
 ```
-```
+*Løsningen bruker [`string templates`]( https://kotlinlang.org/docs/java-to-kotlin-idioms-strings.html#concatenate-strings ) for å sette sammen meldingen uten å bruke `+`*
+
+</details>
 
 ## Lambda og bruken av it
 
