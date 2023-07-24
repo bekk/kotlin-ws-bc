@@ -2,7 +2,7 @@ package no.bekk.game.examples
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
-import com.badlogic.gdx.backends.lwjgl.LwjglApplication
+import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application
 import com.badlogic.gdx.graphics.Color
 import ktx.graphics.use
 import no.bekk.game.AppModule
@@ -12,7 +12,7 @@ import no.bekk.game.globals
 import no.bekk.game.utils.fontWithSize
 
 fun main() {
-    LwjglApplication(AppRunner { InputAndTextModule() }, config)
+    Lwjgl3Application(AppRunner { InputAndTextModule() }, config)
 }
 
 class InputAndTextModule: AppModule {

@@ -2,7 +2,7 @@ package no.bekk.game.solution
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
-import com.badlogic.gdx.backends.lwjgl.LwjglApplication
+import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.badlogic.gdx.math.Vector2
@@ -18,16 +18,16 @@ import no.bekk.game.utils.Rectangle
 import no.bekk.game.utils.x
 
 fun main() {
-    LwjglApplication(AppRunner { DodgeFallingSqueresSolution() }, config)
+    Lwjgl3Application(AppRunner { DodgeFallingSquaresSolution() }, config)
 }
 
-class DodgeFallingSqueresSolution: AppModule {
+class DodgeFallingSquaresSolution: AppModule {
     private val shapeRenderer = globals.shapeRenderer
     private var lastBlockSpawnTime = TimeUtils.millis()
     private var movementSpeed = 500f
     private var blocksFallSpeed = 250f
     private var player = Rectangle(
-        position = EngineConfig.width / 2 x 200,
+        position = EngineConfig.VIEWPORT_WIDTH / 2 x 200f,
         size = 20 x 20
     )
     private var blocksToDodge: List<Rectangle> = emptyList()
@@ -55,10 +55,14 @@ class DodgeFallingSqueresSolution: AppModule {
         }
 
         if (player.position.x < 0) { player.position.x = 0f }
-        if (player.position.x > EngineConfig.width) { player.position.x = EngineConfig.width.toFloat() }
+        if (player.position.x + player.size.x > EngineConfig.VIEWPORT_WIDTH) {
+            player.position.x = EngineConfig.VIEWPORT_WIDTH - player.size.x
+        }
 
         if (player.position.y < 0) { player.position.y = 0f }
-        if (player.position.y > EngineConfig.height) { player.position.y = EngineConfig.height.toFloat() }
+        if (player.position.y + player.size.y > EngineConfig.VIEWPORT_HEIGHT) {
+            player.position.y = EngineConfig.VIEWPORT_HEIGHT - player.size.y
+        }
     }
 
     /**
@@ -79,8 +83,8 @@ class DodgeFallingSqueresSolution: AppModule {
      */
     private fun spawnNewBlocks() {
         val position = Vector2(
-            (Math.random() * EngineConfig.width).toFloat(),
-            EngineConfig.height + 20f
+            (Math.random() * (EngineConfig.VIEWPORT_WIDTH - 20)).toFloat(),
+            EngineConfig.VIEWPORT_HEIGHT + 20f
         )
         val block = Rectangle(
             position = position,
@@ -136,7 +140,7 @@ class DodgeFallingSqueresSolution: AppModule {
      */
     private fun onGameLost() {
         player = Rectangle(
-            position = EngineConfig.width / 2 x 200,
+            position = EngineConfig.VIEWPORT_WIDTH / 2 x 200f,
             size = 20 x 20
         )
         blocksToDodge = emptyList()
