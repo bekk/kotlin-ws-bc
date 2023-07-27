@@ -85,15 +85,22 @@ fun greet(suffix: String = "!") {
 
 </details>
 
-## Lambda og bruken av it
-
-Oppgave:
-// Bruk .let til å gjøre ett eller annet
-
-Løsning:
+## Lambda og bruken av `it`
+Kotlin støtter såkalte `anonyme funksjoner` (også kjent som `lambda`).
+Dette er funksjoner som ikke har noe navn, som er nyttig når de skal sendes som argumenter til andre funksjoner.
+Et eksempel er `map` funksjonen på lister, som tar en funksjon som argument og bruker den til å endre alle elementene i listen.
+```kotlin
+listOf(1,2,3).map({ number -> number * 2 }) // [2,4,6]
 ```
+Standardbiblioteket til Kotlin bruker lambda ganske mye, og språket har en del syntaktisk tøtte for å gjøre det enklere å bruke.
+Hvis en lambda kun har ett argument kan man droppe å gi argumentet et navn og referere til det som `it` inne i lambdaen.
+```kotlin
+listOf(1,2,3).map({ it * 2 }) // [2,4,6]
 ```
-
+Og hvis en lambda er det siste argumentet til en funksjon kan den placeres utenfor parentesene.
+```kotlin
+listOf(1,2,3).map { it * 2 } // [2,4,6]
+```
 
 ## Higher Order Functions
 Store deler av det vi gjør som utviklere er å hente data, manipulere den og deretter bruke den videre i applikasjonene våre.
