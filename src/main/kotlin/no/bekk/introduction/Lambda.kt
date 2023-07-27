@@ -4,7 +4,6 @@ fun double(number: Int): Int {
     return number * 2
 }
 
-// Oppgave: Skriv om
 fun maybeDouble(number: Int?): Int? {
     return if (number != null) {
         double(number)
