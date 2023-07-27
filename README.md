@@ -2,9 +2,6 @@
 
 Du kan finne en presentasjonen som hører til workshopen under [docs](docs).
 
-<<<<<<< Updated upstream
-Vi vil starte med å lage et lite spill hvor du skal styre en firkant på skjermen som skal
-=======
 Denne workshopen er delt inn i to deler: den første delen gir deg en generell introduksjon til noen viktige konsepter i Kotlin, før vi skal lage et spill i del to! Dersom du har vært borti Kotlin før, må du gjerne hoppe over del en.
 
 Og ikke glem, bruk coachene og kollegaene dine aktivt! Vi er her for å hjelpe 🚀
