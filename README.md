@@ -130,7 +130,7 @@ listOf(1, 2, 3).map { it * 2 } // [2,4,6]
 ## Higher Order Functions
 
 Store deler av det vi gjør som utviklere er å hente data, manipulere den og deretter bruke den videre i applikasjonene våre.
-I Kotlin finnes det mange "higher order functions", altså ferdigskrevne hjelpefunksjoner, som gjør dette veldig mye lettere enn i Java.
+I Kotlin finnes det mange "higher order functions" som gjør dette veldig mye lettere enn i Java.
 Blant annet har vi funksjoner for å endre lister (map) eller filtrerer bort ting vi ikke trenger (filter).
 
 ``` kotlin
